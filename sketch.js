@@ -130,12 +130,15 @@ function keyPressed()
     
     if(flagpole.isReached && key == ' ')
     {
-        nextLevel();
+        lives += 1; //increase before to maintain the same number of lives after game starts
+        flagpole.isReached = false; //reset
+        startGame();
         return
     }
     else if(lives == 0 && key == ' ')
     {
-        returnToStart();
+        lives = 4;
+        startGame();
         return
     }
     
